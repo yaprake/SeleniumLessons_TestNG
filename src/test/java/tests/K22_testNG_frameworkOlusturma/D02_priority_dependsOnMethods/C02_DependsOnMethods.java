@@ -50,7 +50,7 @@ public class C02_DependsOnMethods {
         String actualUrl = driver.getCurrentUrl();
 
         Assert.assertTrue(actualUrl.contains(expectedUrlIcerik));
-
+        driver.close();
     }
 
     @Test(dependsOnMethods = "anasayfaTesti")
@@ -68,7 +68,7 @@ public class C02_DependsOnMethods {
 
         Assert.assertTrue(actualBulunanUrunSayisi>0);
 
-
+        driver.close();
     }
 
     // 3- ilk urunu tiklayip, urun isminde case sensitive olmadan "phone" bulundugunu test edin
@@ -81,7 +81,7 @@ public class C02_DependsOnMethods {
                 .toLowerCase();
 
         Assert.assertTrue(actualUrunIsmi.contains(expectedIsimIcerik));
-
+        driver.close();
     }
 
 
